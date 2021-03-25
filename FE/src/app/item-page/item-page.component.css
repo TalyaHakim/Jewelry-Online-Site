@@ -1,0 +1,16 @@
+.itemImg{
+    margin: 15px;
+    width: 256px;
+}
+.itemCenter{
+    text-align: -webkit-center;
+}
+.card-body{
+    text-align: left;
+}
+.icon{
+    font-size: x-large;
+}
+.icon:hover{
+    color: gray;
+}

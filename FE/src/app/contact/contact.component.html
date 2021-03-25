@@ -1,0 +1,33 @@
+<h1 id="contact">CONTACT US</h1>
+<div class="container">
+        <div class="col-md-4 left">
+            <p class="title">Getting in touch is eazy!</p>
+            <p class="info">050-351-9456</p>
+            <p class="info">Address : 1234 Main Street Anewhere</p>
+            <p class="info">Support : talyaHakim@gmail.com</p>
+        </div>
+        <div>
+       </div>
+        <div class="col-md-8 left">
+            <section class="get-in-touch">
+                <form [formGroup]="form" class="contact-form row">
+                   <div class="form-field col x-50">
+                      <input formControlName="name" id="name" class="input-text js-input" type="text" required>
+                      <label class="label" for="name">Name</label>
+                   </div>
+                   <div class="form-field col x-50">
+                      <input formControlName="email" id="email" class="input-text js-input" type="email" required>
+                      <label class="label" for="email">E-mail</label>
+                   </div>
+                   <div class="form-field col x-100">
+                      <input formControlName="message" id="message" class="input-text js-input" type="text" required>
+                      <label class="label" for="message">Message</label>
+                   </div>
+                   <div class="form-field col x-100 align-center">
+                      <button class="btn btn-outline-dark" (click)='send()' [disabled]="!form.valid">Submit</button>
+                   </div>
+                   <p>{{msg}}</p>
+                </form>
+             </section>
+        </div>
+    </div>

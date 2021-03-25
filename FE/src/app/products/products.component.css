@@ -1,0 +1,8 @@
+.card{
+    display: inline-block;
+    margin: 5px;
+    text-align: left;
+}
+.products{
+    text-align: center;
+}

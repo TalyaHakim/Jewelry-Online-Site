@@ -1,0 +1,25 @@
+<div>
+  <table class="table container">
+    <tr *ngFor='let item of items'>
+      <td class="test"><img src="{{item.img}}" /></td>
+      <td>
+        <h5 class="card-title col-md-12">{{item.name}}</h5>
+        <p class="card-text col-md-12">{{item.content}}</p>
+        <p class="card-text col-md-12">{{item.carat}}K</p>
+        <h5 class="card-text col-md-12">{{item.price}}$</h5>
+        <div class="amount">
+          <span>
+            <b (click)="reduceOneItem(item)"> - </b>
+            {{item.amount}}
+            <b (click)="addOneItem(item)"> + </b>
+          </span>
+        </div>
+      </td>
+      <td>
+        <fa-icon [icon]="faTrashAlt" class="trashIcon" (click)='removeItem(item._id)'></fa-icon>
+      </td>
+    </tr>
+  </table>
+  <p style="text-align: center;" *ngIf="totalPrice"> totalPrice :  {{totalPrice}}</p>
+  <p class="emptyMsg" *ngIf="!totalPrice">Your cart is empty</p>
+</div>

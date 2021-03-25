@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <b class="nav-link" (click)='showAllProducts()'>All</b>
+        <b class="nav-link" (click)='showTypeCategory()'>Gemston</b>
+        <ul *ngIf='typeCategory' class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor='let type of types' (click)='Filter({name: g.innerHTML})' #g>{{type}}</li>
+        </ul>   
+        <b class="nav-link" (click)='showShapeCategory()'>Shape</b>
+        <ul *ngIf='shapeCategory' class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor='let shape of shapes' (click)='Filter({shape: s.innerHTML})' #s>{{shape}}</li>
+        </ul>     
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="products">
+    <div class="card rounded shadow border-0" style="width: 14rem;" *ngFor='let Product of Products'>
+      <img src='{{Product.img}}' class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title" (click)="showItemPage(Product)">{{Product.content}}</h5>
+        <p class="small text-muted font-italic">{{Product.name}}</p>
+        <p class="text-dark font-italic">{{Product.price}}$</p>
+      </div>
+    </div>
+  </div>   

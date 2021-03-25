@@ -1,0 +1,25 @@
+<div class="container">
+    <fa-icon [icon]="faArrowLeft" class="icon" (click)='goBack()'></fa-icon>
+</div>
+<div class="container itemCenter">
+    <div class="card mb-6" style="max-width: 700px;" *ngIf='product'>
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="{{product?.img}}" alt="..." class="itemImg">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">{{product?.content}}</h5>
+              <p class="card-text">{{product?.name}}</p>
+              <p class="card-text">{{product?.size}}</p>
+              <p class="card-text">{{product?.carat}}K</p>
+              <p class="card-text">{{product?.shape}}</p>
+              <p class="text-muted">{{product?.stoneNum}}</p>
+              <h5 class="text-dark font-italic">{{product?.price}}$</h5>
+              <hr>
+            <button type="button" class="btn btn-outline-secondary" (click)='addToCart()'> ADD TO CART </button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

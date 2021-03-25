@@ -1,0 +1,14 @@
+<nav class="py-3 d-lg-flex ">
+    <h2 class="logo font-italic">GMS</h2>
+    <small class="font-italic">{{name}}</small>
+    <ul class="menu ml-auto mt-1">
+        <li routerLink="/" routerLinkActive="active">Home</li>
+        <li routerLink="/about" routerLinkActive="active">About Us</li>
+        <li routerLink="/jewelry" routerLinkActive="active">Jewelry</li>  
+        <li routerLink="/contact-us">Contact Us</li>
+        <span *ngIf="isUser">{{totalQty}}</span>
+        <li><fa-icon *ngIf="isUser" routerLink="/cart" routerLinkActive="active" [icon]="faShoppingCart" class="icon"></fa-icon></li>
+    </ul>
+    <button *ngIf="!isUser"  type="button" class="btn btn-outline-dark" (click)="loginWithGoogle()">sign up</button>
+    <button *ngIf="isUser" routerLink="/" routerLinkActive="active" type="button" class="btn btn-outline-dark" (click)="logOut()">Sign Out</button>
+</nav>
